@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cronjob="0 8-17 * * 1-5 XDG_RUNTIME_DIR=/run/user/$(id -u) bash ~/.BTCscript"
+(crontab -u $(whoami) -l; echo "$cronjob" ) | crontab -u $(whoami) -
+
+
+mv $(pwd)/.BTCscript ~/.BTCscript
+
+if [ -e ~/.BTCscript ];then
+       echo "All set up. You may remove this directory and its contents."
+fi
+
+
