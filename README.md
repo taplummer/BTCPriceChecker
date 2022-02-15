@@ -21,3 +21,13 @@ Push notification will not work without ```notify-send```.
 Once you've run the installer, there will be a new crontab job that runs Monday-Friday at each hour from 8 AM to 5 PM.
 
 Happy HODLing!
+
+## Modifying Crontab
+
+```crontab -e```
+
+This will pull up your user-specfic crontab. 
+
+The installer script should've entered ```0 8-17 * * 1-5 XDG_RUNTIME_DIR=/run/user/$(id -u) bash ~/.BTCscript```
+
+On some distros, you may need to change the ```XDG_RUNTIME_DIR=/run/user/$(id -u)``` part. Unfortunately, it's a bit of trial and error with cron pushing notifications, so your mileage may vary if the included configuration doesn't work.

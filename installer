@@ -8,6 +8,8 @@ mv $(pwd)/.BTCscript ~/.BTCscript
 
 if [ -e ~/.BTCscript ];then
        echo "All set up. You may remove this directory and its contents."
+else echo "There was an error moving the script. Are you root?"
+
 fi
 
 

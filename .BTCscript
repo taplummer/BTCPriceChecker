@@ -11,21 +11,21 @@ result=$(echo "$current - $last" | bc -l | cut -d '.' -f 1)
 display=$(echo "$current") 
 
 
-if [ $(date +%u) -gt 1 ] && [ $(date +%H) = 8 ];then
+if [ $(date +%u) -gt "1" ] && [ $(date +%H) = "8" ];then
 	if test $result -gt 0; then notify-send -u normal -t 5000 "Price Alert $display" "The price of Bitcoin has changed +$result dollars since last night." 
-	else notify-send -u normal -t 5000 "Price Alert" "The price of Bitcoin has changed $result dollars since last night."
+	else notify-send -u normal -t 5000 "Price Alert $display" "The price of Bitcoin has changed $result dollars since last night."
 	fi
 fi
 
-if [ $(date +%u) = 1 ] && [ $(date +%H) = 8 ];then
+if [ $(date +%u) = "1" ] && [ $(date +%H) = "8" ];then
 	if test $result -gt 0; then notify-send -u normal -t 5000 "Price Alert $display" "The price of Bitcoin has changed +$result dollars since Friday." 
-	else notify-send -u normal -t 5000 "Price Alert" "The price of Bitcoin has changed $result dollars since Friday."
+	else notify-send -u normal -t 5000 "Price Alert $display" "The price of Bitcoin has changed $result dollars since Friday."
 	fi
 fi
 
-if [ $(date +%H) -gt 8 ];then
+if [ $(date +%H) -gt "8" ];then
 	if test $result -gt 0; then notify-send -u normal -t 5000 "Price Alert $display" "The price of Bitcoin has changed +$result dollars in the last hour." 
-	else notify-send -u normal -t 5000 "Price Alert" "The price of Bitcoin has changed $result dollars in the last hour."
+	else notify-send -u normal -t 5000 "Price Alert $display" "The price of Bitcoin has changed $result dollars in the last hour."
 	fi
 fi
 
